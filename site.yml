@@ -1,0 +1,4 @@
+---
+- include: dns-cache-servers.yml
+- include: local-dns-servers.yml
+- include: dhcp-servers.yml

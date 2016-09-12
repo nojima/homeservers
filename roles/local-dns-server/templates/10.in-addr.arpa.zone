@@ -1,0 +1,21 @@
+$ORIGIN 10.in-addr.arpa.
+$TTL    60
+
+@       IN      SOA     ns.local.  admin.ynojima.com. (
+        2016091300      ; serial number
+        3600            ; refresh
+        900             ; retry
+        1209600         ; expire
+        60              ; ttl
+)
+
+; Name Servers
+                        IN      NS      ns.local.
+
+; PTR Records
+1.0.0.10.in-addr.arpa.  IN      PTR     router.local.
+2.0.0.10.in-addr.arpa.  IN      PTR     verflucht.local.
+5.0.0.10.in-addr.arpa.  IN      PTR     sera.local.
+6.0.0.10.in-addr.arpa.  IN      PTR     ixion.local.
+5.2.0.10.in-addr.arpa.  IN      PTR     hv-1.local.
+6.2.0.10.in-addr.arpa.  IN      PTR     hv-2.local.

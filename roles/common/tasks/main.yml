@@ -1,0 +1,14 @@
+---
+- name: install ntp
+  apt: name=ntp state=latest
+
+- name: configure ntp
+  template: src=ntp.conf dest=/etc/ntp.conf
+  notify:
+    - restart ntp
+
+- name: ensure that ntp is started
+  service: name=ntp state=started
+
+- name: configure ulimits
+  template: src=nofile.conf dest=/etc/security/limits.d

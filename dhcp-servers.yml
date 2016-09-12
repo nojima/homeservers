@@ -1,0 +1,5 @@
+---
+- hosts: dhcp-servers
+  roles:
+    - common
+    - dhcp-server

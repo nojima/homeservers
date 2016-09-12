@@ -1,0 +1,23 @@
+---
+- name: install nsd
+  apt: name=nsd state=latest
+
+- name: configure nsd
+  template: src=nsd.conf dest=/etc/nsd
+  notify:
+    - restart nsd
+
+- name: create directory for zones
+  file: path=/etc/nsd/zones state=directory
+
+- name: configure zones
+  template: src={{ item }} dest=/etc/nsd/zones
+  with_items:
+    - 10.in-addr.arpa.zone
+    - local.zone
+    - nsd.conf
+  notify:
+    - restart nsd
+
+- name: ensure that nsd is started
+  service: name=nsd state=started

@@ -1,0 +1,8 @@
+[dns-cache-servers]
+127.0.0.1
+
+[local-dns-servers]
+127.0.0.1
+
+[dhcp-servers]
+127.0.0.1

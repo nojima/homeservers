@@ -1,0 +1,11 @@
+---
+- name: install isc-dhcp-server
+  apt: name=isc-dhcp-server state=latest
+
+- name: configure dhcp-server
+  template: src=dhcpd.conf dest=/etc/dhcp
+  notify:
+    - restart dhcp-server
+
+- name: ensure that dhcp-server is started
+  service: name=isc-dhcp-server state=started

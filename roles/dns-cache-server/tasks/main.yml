@@ -1,0 +1,11 @@
+---
+- name: install unbound
+  apt: name=unbound state=latest
+
+- name: configure unbound
+  template: src=unbound.conf dest=/etc/unbound
+  notify:
+    - restart unbound
+
+- name: ensure that unbound is started
+  service: name=unbound state=started

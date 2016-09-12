@@ -1,0 +1,6 @@
+---
+- hosts: local-dns-servers
+  roles:
+    - common
+    - local-dns-server
+

@@ -1,0 +1,5 @@
+---
+- hosts: dns-cache-servers
+  roles:
+    - common
+    - dns-cache-server
